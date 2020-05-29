@@ -30,9 +30,12 @@ def detect_face(img):
     return combined
     
 
+
 while True:
     ret, frame = cap.read()
+    frame=cv2.resize(frame, (0,0), fx=0.6, fy=0.6)
     frame=cv2.flip(frame,1)
+    
     
     blur_face=detect_face(frame)
     
